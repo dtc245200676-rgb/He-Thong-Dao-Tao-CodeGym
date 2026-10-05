@@ -1,4 +1,4 @@
-# Environment
+# Environment / secrets
 .env
 *.env
 !.env.example
@@ -12,8 +12,14 @@ build/
 .venv/
 venv/
 __pycache__/
-*.pyc
+*.py[cod]
 .pytest_cache/
+.coverage
+htmlcov/
+*.db
+
+# Logs
+*.log
 
 # IDE
 .vscode/
