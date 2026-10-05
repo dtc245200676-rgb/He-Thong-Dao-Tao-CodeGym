@@ -84,7 +84,9 @@ export default function AppLayout() {
                 {user?.roles.map((role) => <Tag key={role}>{roleLabels[role] || role}</Tag>)}
               </Space>
             </div>
-            <Button icon={<LogoutOutlined />} onClick={handleLogout}>Đăng xuất</Button>
+           <Button danger icon={<LogoutOutlined />} onClick={handleLogout}>
+  Đăng xuất
+</Button>
           </Space>
         </Header>
         <Content className="app-content"><Outlet /></Content>
