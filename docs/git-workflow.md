@@ -1,19 +1,34 @@
-# Git Workflow
+# Git Workflow cho nhóm 9 người
 
-Không push trực tiếp vào main.
+## Nguyên tắc
 
-Quy trình:
+- Không push trực tiếp vào `main`.
+- Mỗi task/sub-task Jira có branch riêng.
+- Pull code mới nhất từ `main` trước khi tạo branch.
+- Code xong phải test trước khi tạo Pull Request.
 
-Jira Task
-→ Tạo branch
-→ Code
-→ Commit
-→ Push
-→ Pull Request
-→ Review
-→ Merge vào main
+## Ví dụ
 
-Ví dụ branch:
+```bash
+git checkout main
+git pull origin main
+git checkout -b feature/S1-08-user-management
+```
 
-feature/S1-03-forgot-password
-feature/S1-04-change-password
+Sau khi làm xong:
+
+```bash
+git add .
+git commit -m "S1-08 implement user management"
+git push -u origin feature/S1-08-user-management
+```
+
+Tạo Pull Request từ branch vào `main`, nhờ ít nhất một thành viên review rồi merge.
+
+## Sau khi merge
+
+```bash
+git checkout main
+git pull origin main
+git branch -d feature/S1-08-user-management
+```
